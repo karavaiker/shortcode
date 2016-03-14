@@ -16,7 +16,7 @@ sys.getdefaultencoding()
 
 
 #Входные данные
-apiKey = 'ruwxls9284'
+apiKey = 'xxxx'
 #название, рубрика, сайт, телефон, страница в соцсетях, пометка статуса (платно бесплатно они стоят в рубрике)
 
 def searchFirm(what,page):
