@@ -2,19 +2,16 @@
 class AddLeadToCRM
 {
     /**
-     * Created by Promedia.
-     * User: Vladimir Krasnoselskikh
+     * Created by Vladimir Krasnoselskikh.
+     * User: 
      * Date: 27.11.17
      * Time: 11:59
-     * Так как кампания Амадо создала формы не через стандартный обработчик битрикса,
-     * по этому пришлось писать класс, который отлавливает события при добавлении элемента в инфоблок (так устроенны их формы)
-     * и, если, добавленый элемент - форма заявки, то отправить это событие в CRM.
      */
     // создаем обработчик события "OnBeforeIBlockElementAdd"
     function OnBeforeIBlockElementAddHandler(&$arFields) 
     {
         $_params = Array(
-            "url_to_crm_handler" => "https://altenergo.bitrix24.ru/rest/82/bv3q1fwnjevh5sds/crm.lead.add/",
+            "url_to_crm_handler" => "https://{{client}}.bitrix24.ru/rest/{{id_user}}/{{key}}/crm.lead.add/",
         );
         $url_page = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         if ($arFields["IBLOCK_ID"] == 18) {
